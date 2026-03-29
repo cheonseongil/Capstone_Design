@@ -22,7 +22,7 @@
                 android:id="@+id/btn_back"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@android:drawable/ic_menu_revert"
+                android:src="@drawable/go_back"
                 android:padding="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@android:drawable/ic_menu_sort_by_size" />
+                    android:src="@drawable/graph" />
 
                 <TextView
                     android:layout_width="wrap_content"
