@@ -14,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class Student_MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         // 1. 출석률 버튼 이벤트 (기존 코드)
         LinearLayout btnAttendanceRate = findViewById(R.id.btn_attendance_rate);
         btnAttendanceRate.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AttendanceRateActivity.class);
+            Intent intent = new Intent(Student_MainActivity.this, Student_AttendanceRateActivity.class);
             startActivity(intent);
         });
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // SettingsActivity로 이동하는 Intent 생성 및 시작
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent intent = new Intent(Student_MainActivity.this, Student_SettingsActivity.class);
                 startActivity(intent);
             }
         });

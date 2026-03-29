@@ -13,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class SettingsActivity extends AppCompatActivity {
+public class Student_SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // PersonalInfoActivity로 이동하는 Intent 생성 및 시작
-                Intent intent = new Intent(SettingsActivity.this, PersonalInfoActivity.class);
+                Intent intent = new Intent(Student_SettingsActivity.this, Student_PersonalInfoActivity.class);
                 startActivity(intent);
             }
         });

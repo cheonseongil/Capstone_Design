@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class PersonalInfoActivity extends AppCompatActivity {
+public class Student_PersonalInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // ChangePasswordActivity로 이동하는 Intent 생성 및 시작
-                Intent intent = new Intent(PersonalInfoActivity.this, ChangePasswordActivity.class);
+                Intent intent = new Intent(Student_PersonalInfoActivity.this, Student_ChangePasswordActivity.class);
                 startActivity(intent);
             }
         });

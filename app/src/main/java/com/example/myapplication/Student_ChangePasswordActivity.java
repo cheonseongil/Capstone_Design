@@ -7,17 +7,14 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class ChangePasswordActivity extends AppCompatActivity {
+public class Student_ChangePasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_change_password);
+        setContentView(R.layout.student_change_password);
 
         // 하단 토글 버튼 뷰 찾기
         LinearLayout layoutConfirm = findViewById(R.id.layoutConfirm);
@@ -38,7 +35,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // 여기에 비밀번호 변경 로직을 구현합니다.
                 // 예: 입력 필드 확인, 서버 API 호출 등
-                Toast.makeText(ChangePasswordActivity.this, "비밀번호 변경이 시도됩니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Student_ChangePasswordActivity.this, "비밀번호 변경이 시도됩니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
