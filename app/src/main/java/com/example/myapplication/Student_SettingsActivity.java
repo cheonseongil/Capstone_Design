@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 // import android.widget.LinearLayout; // 만약 아래 버튼이 LinearLayout이라면 주석 해제
+import android.widget.TextView; // TextView 임포트 추가
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,8 @@ public class Student_SettingsActivity extends AppCompatActivity {
             return insets;
         });
 
+
+
         // 1. 뒤로 가기 버튼
         ImageView btnBack = findViewById(R.id.btn_back_settings);
         btnBack.setOnClickListener(v -> finish()); // 현재 액티비티 종료
@@ -44,6 +47,21 @@ public class Student_SettingsActivity extends AppCompatActivity {
                 Intent intent = new Intent(Student_SettingsActivity.this, Student_PersonalInfoActivity.class);
                 startActivity(intent);
             }
+        });
+
+        // ==========================================
+        // 3. 로그아웃 버튼 (태그리스 출석 시스템 초기 화면으로 이동)
+        // ==========================================
+        TextView btnLogout = findViewById(R.id.btn_logout); // XML에서 TextView로 되어있음
+
+        btnLogout.setOnClickListener(v -> {
+            // ★ 주의: AppStartActivity.class 부분을 실제 '태그리스 출석 시스템' 화면의 자바 클래스 이름으로 변경하세요!
+            Intent intent = new Intent(Student_SettingsActivity.this, LoginMainActivity.class);
+
+            // 기존에 쌓여있던 모든 화면 기록을 지워서 뒤로 가기 버튼으로 로그인된 화면으로 돌아가지 못하게 함
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            startActivity(intent);
         });
     }
 }

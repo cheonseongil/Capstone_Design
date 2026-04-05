@@ -26,6 +26,12 @@
             android:exported="false" />
         <activity
             android:name=".Student_MainActivity"
+            android:exported="false"/>
+        <activity android:name=".StudentLoginActivity" />
+        <activity android:name=".FindIdActivity" />
+        <activity android:name=".FindPasswordActivity" />
+        <activity
+            android:name=".LoginMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

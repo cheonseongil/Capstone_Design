@@ -43,7 +43,6 @@
             android:layout_height="32dp"
             android:src="@drawable/setting" />
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -118,8 +117,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -130,6 +129,7 @@
                 android:text="XXXX.ver"
                 android:textColor="#333333"
                 android:textSize="10sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,32 +137,25 @@
                 android:textColor="#666666"
                 android:textSize="10sp" />
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
+    <TextView
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:padding="8dp"
+        android:drawableStart="@android:drawable/ic_lock_power_off"
+        android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:text="로그아웃"
+        android:textColor="#333333"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_lock_power_off" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="로그아웃"
-            android:textColor="#333333"
-            android:textSize="14sp" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

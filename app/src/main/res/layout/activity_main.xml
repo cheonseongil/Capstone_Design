@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top|center_horizontal"
+    android:background="#F3F3F3"
+    android:paddingTop="60dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="태그리스 출석 시스템"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/semyung_logo"
+        android:contentDescription="학교 로고" />
+
+    <Button
+        android:id="@+id/btnStudentLogin"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:text="학생 로그인"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_outline_button"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="0dp" />
+
+    <Button
+        android:id="@+id/btnProfessorLogin"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:text="교수 로그인"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_outline_button"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="0dp" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:text="회원가입"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_outline_button"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="0dp" />
+
+</LinearLayout>

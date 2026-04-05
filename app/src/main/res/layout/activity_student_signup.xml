@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="18dp"
+        android:paddingTop="18dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="28dp">
+
+        <!-- 상단 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <LinearLayout
+                android:id="@+id/layoutSignupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivSignupPerson"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_person_signup"
+                    android:contentDescription="회원가입 아이콘" />
+
+                <TextView
+                    android:id="@+id/tvSignupTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="학생 회원가입"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivSignupLogo"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_toEndOf="@id/layoutSignupTitle"
+                android:layout_marginStart="14dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/semyung_logo"
+                android:contentDescription="학교 로고" />
+        </RelativeLayout>
+
+        <!-- 아이디 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etSignupId"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="아이디 입력"
+                android:textSize="10sp"
+                android:inputType="text"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 비밀번호 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etSignupPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C8C8C8"
+                    android:hint="비밀번호 입력"
+                    android:textSize="10sp"
+                    android:inputType="textPassword"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:paddingBottom="4dp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_lock_small"
+                    android:contentDescription="잠금" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 비밀번호 재확인 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="비밀번호&#10;재확인"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:lineSpacingExtra="0dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etSignupPasswordCheck"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C8C8C8"
+                    android:hint="비밀번호 입력"
+                    android:textSize="10sp"
+                    android:inputType="textPassword"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:paddingBottom="4dp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_lock_small"
+                    android:contentDescription="잠금" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 이름 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="이름 입력"
+                android:textSize="10sp"
+                android:inputType="textPersonName"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 학번 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="학번"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etStudentNumber"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="학번 입력"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 학과 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="학과"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etDepartment"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="학과 입력"
+                android:textSize="10sp"
+                android:inputType="text"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 생년월일 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="생년월일"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etBirth"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="생년월일 입력"
+                android:textSize="10sp"
+                android:inputType="date"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 성별 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="성별"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="104dp"
+                android:layout_height="24dp"
+                android:orientation="horizontal"
+                android:background="@drawable/gender_toggle_bg"
+                android:padding="1dp">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/gender_segment_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="남자"
+                    android:textColor="@drawable/gender_text_selector"
+                    android:textSize="9sp" />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/gender_segment_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="여자"
+                    android:textColor="@drawable/gender_text_selector"
+                    android:textSize="9sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- 본인확인 이메일 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="본인확인 이메일"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="이메일 입력"
+                android:textSize="10sp"
+                android:inputType="textEmailAddress"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 휴대전화 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="휴대전화"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="전화번호 입력"
+                android:textSize="10sp"
+                android:inputType="phone"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+
+            <Button
+                android:id="@+id/btnSendPhoneCode"
+                android:layout_width="58dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/rounded_button"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="인증번호 받기"
+                android:textColor="#FFFFFF"
+                android:textSize="7sp" />
+        </LinearLayout>
+
+        <!-- 인증번호 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etPhoneCode"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C8C8C8"
+                android:hint="인증번호를 입력하세요"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- 가입 버튼 -->
+        <Button
+            android:id="@+id/btnSignupConfirm"
+            android:layout_width="74dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounded_button"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="가입확인"
+            android:textColor="#FFFFFF"
+            android:textSize="9sp" />
+    </LinearLayout>
+</ScrollView>

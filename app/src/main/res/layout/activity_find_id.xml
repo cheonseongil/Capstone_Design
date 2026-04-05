@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/semyung_logo"
+            android:contentDescription="학교 로고" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="아이디 찾기"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etFindIdPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="전화번호 입력"
+                android:inputType="phone"
+                android:padding="12dp" />
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnFindIdSendCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인증번호 받기"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etFindIdCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="인증번호 입력"
+            android:inputType="number"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnFindIdCheck"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="확인"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button" />
+
+        <Button
+            android:id="@+id/btnFindId"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="아이디 찾기"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button" />
+
+    </LinearLayout>
+</ScrollView>
