@@ -27,8 +27,14 @@ public class LoginMainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnProfessorLogin.setOnClickListener(v -> {
+        /*btnProfessorLogin.setOnClickListener(v -> {
             Toast.makeText(LoginMainActivity.this, "교수 로그인 화면은 추후 구현", Toast.LENGTH_SHORT).show();
+        });*/
+
+        btnProfessorLogin.setOnClickListener(v -> {
+            // 토스트 메시지 대신 ProfessorLoginActivity로 이동하는 Intent 작성
+            Intent intent = new Intent(LoginMainActivity.this, ProfessorLoginActivity.class);
+            startActivity(intent);
         });
 
         btnSignUp.setOnClickListener(v -> {
