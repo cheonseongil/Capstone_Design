@@ -34,15 +34,15 @@ public class Professor_MainActivity extends AppCompatActivity {
         // ------------------------------
 
         // 1. [수정됨] 출석 관리 버튼 이벤트
-        /*LinearLayout btnAttendanceRate = findViewById(R.id.btn_attendance_rate);
+        LinearLayout btnAttendanceRate = findViewById(R.id.btn_attendance_rate);
         btnAttendanceRate.setOnClickListener(v -> {
             // 출석 관리 화면(Professor_AttendanceManagementActivity)으로 이동하도록 변경했습니다.
             Intent intent = new Intent(Professor_MainActivity.this, Professor_AttendanceManagementActivity.class);
             startActivity(intent);
-        });*/
+        });
 
         // 2. 설정(톱니바퀴) 아이콘 이벤트 (기존 코드 유지)
-        /*ImageView imageViewSettings = findViewById(R.id.iv_settings);
+        ImageView imageViewSettings = findViewById(R.id.iv_settings);
         imageViewSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,14 +50,14 @@ public class Professor_MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Professor_MainActivity.this, Professor_SettingsActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         // 3. 일일출석 버튼(LinearLayout) 찾기
-        /*LinearLayout btnDailyAttendance = findViewById(R.id.btn_daily_attendance);
+        LinearLayout btnDailyAttendance = findViewById(R.id.btn_daily_attendance);
         btnDailyAttendance.setOnClickListener(v -> {
             // 일일 출석 과목 목록 화면(Professor_AttendanceRateActivity)으로 이동
             Intent intent = new Intent(Professor_MainActivity.this, Professor_AttendanceRateActivity.class);
             startActivity(intent);
-        });*/
+        });
     }
 }

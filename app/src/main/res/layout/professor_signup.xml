@@ -1,338 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="112dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="76dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/semyung_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="50dp"
-        tools:context=".SignupActivity">
+        android:layout_marginTop="30dp"
+        android:text="교수 로그인"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guide_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guide_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.32" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.38" />
 
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_revert"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/labelId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="아이디"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="@id/guide_label" />
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="교수 회원가입"
-            android:textColor="#000000"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/btnBack"
-            app:layout_constraintStart_toEndOf="@id/btnBack"
-            app:layout_constraintTop_toTopOf="@id/btnBack" />
+    <EditText
+        android:id="@+id/editId"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:hint="아이디 입력"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@id/labelId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_edit" />
 
-        <ImageView
-            android:id="@+id/imgLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/semyung_logo"
-            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
-            app:layout_constraintStart_toEndOf="@id/tvTitle"
-            app:layout_constraintTop_toTopOf="@id/tvTitle" />
+    <View
+        android:id="@+id/lineId"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#B2B2B2"
+        app:layout_constraintTop_toBottomOf="@id/editId"
+        app:layout_constraintStart_toStartOf="@id/editId"
+        app:layout_constraintEnd_toEndOf="@id/editId" />
 
-        <TextView
-            android:id="@+id/labelId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:text="아이디"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+    <TextView
+        android:id="@+id/labelPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="비밀번호"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/labelId"
+        app:layout_constraintStart_toStartOf="@id/guide_label" />
 
-        <EditText
-            android:id="@+id/editId"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:hint="아이디 입력"
-            android:inputType="text"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelId"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guide_edit" />
+    <EditText
+        android:id="@+id/editPw"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:hint="비밀번호 입력"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="@id/labelPw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_edit" />
 
-        <View
-            android:id="@+id/lineId"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editId"
-            app:layout_constraintStart_toStartOf="@id/editId"
-            app:layout_constraintTop_toBottomOf="@id/editId" />
+    <View
+        android:id="@+id/linePw"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#B2B2B2"
+        app:layout_constraintTop_toBottomOf="@id/editPw"
+        app:layout_constraintStart_toStartOf="@id/editPw"
+        app:layout_constraintEnd_toEndOf="@id/editPw" />
 
-        <TextView
-            android:id="@+id/labelPw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="비밀번호"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/labelId" />
+    <CheckBox
+        android:id="@+id/checkStayLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="로그인 상태 유지"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/linePw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/editPw"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:hint="비밀번호 입력"
-            android:inputType="textPassword"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelPw"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guide_edit" />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#0088FF"
+        android:text="로그인"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/checkStayLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editPw"
-            app:layout_constraintStart_toStartOf="@id/editPw"
-            app:layout_constraintTop_toBottomOf="@id/editPw" />
-
-        <TextView
-            android:id="@+id/labelPwCheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="비밀번호\n재확인"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/labelPw" />
-
-        <EditText
-            android:id="@+id/editPwCheck"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:hint="비밀번호 재입력"
-            android:inputType="textPassword"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelPwCheck"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guide_edit" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editPwCheck"
-            app:layout_constraintStart_toStartOf="@id/editPwCheck"
-            app:layout_constraintTop_toBottomOf="@id/editPwCheck" />
-
-        <TextView
-            android:id="@+id/labelName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="이름"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/labelPwCheck" />
-
-        <EditText
-            android:id="@+id/editName"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:hint="실명 입력"
-            android:inputType="textPersonName"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guide_edit" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editName"
-            app:layout_constraintStart_toStartOf="@id/editName"
-            app:layout_constraintTop_toBottomOf="@id/editName" />
-
-        <TextView
-            android:id="@+id/labelDept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="학과"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/labelName" />
-
-        <EditText
-            android:id="@+id/editDept"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:hint="소속 학과 입력"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelDept"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guide_edit" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editDept"
-            app:layout_constraintStart_toStartOf="@id/editDept"
-            app:layout_constraintTop_toBottomOf="@id/editDept" />
-
-        <TextView
-            android:id="@+id/labelGender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="성별"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/labelDept" />
-
-        <RadioGroup
-            android:id="@+id/radioGender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@id/labelGender"
-            app:layout_constraintStart_toStartOf="@id/guide_edit"
-            app:layout_constraintTop_toTopOf="@id/labelGender">
-
-            <RadioButton
-                android:id="@+id/radioMale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="남자" />
-
-            <RadioButton
-                android:id="@+id/radioFemale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="여자" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/labelPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="휴대전화"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/labelGender" />
-
-        <EditText
-            android:id="@+id/editPhone"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="8dp"
-            android:background="@null"
-            android:hint="'-' 없이 입력"
-            android:inputType="phone"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/labelPhone"
-            app:layout_constraintEnd_toStartOf="@id/btnGetAuth"
-            app:layout_constraintStart_toStartOf="@id/guide_edit" />
-
-        <Button
-            android:id="@+id/btnGetAuth"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:backgroundTint="#0088FF"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="인증요청"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@id/editPhone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/editPhone" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editPhone"
-            app:layout_constraintStart_toStartOf="@id/editPhone"
-            app:layout_constraintTop_toBottomOf="@id/editPhone" />
-
-        <EditText
-            android:id="@+id/editAuthCode"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:background="@null"
-            android:hint="인증번호 6자리"
-            android:inputType="number"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@id/editPhone"
-            app:layout_constraintStart_toStartOf="@id/editPhone"
-            app:layout_constraintTop_toBottomOf="@id/editPhone" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#B2B2B2"
-            app:layout_constraintEnd_toEndOf="@id/editAuthCode"
-            app:layout_constraintStart_toStartOf="@id/editAuthCode"
-            app:layout_constraintTop_toBottomOf="@id/editAuthCode" />
-
-        <Button
-            android:id="@+id/btnSignupFinal"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#0088FF"
-            android:text="가입완료"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guide_label"
-            app:layout_constraintTop_toBottomOf="@id/editAuthCode" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

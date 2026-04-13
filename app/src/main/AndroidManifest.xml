@@ -36,14 +36,14 @@
 
         <activity android:name=".Professor_MainActivity" android:exported="false" />
 
-        <!--<activity android:name=".Professor_ChangePasswordActivity" android:exported="false" />
+        <activity android:name=".Professor_ChangePasswordActivity" android:exported="false" />
         <activity android:name=".Professor_PersonalInfoActivity" android:exported="false" />
         <activity android:name=".Professor_SettingsActivity" android:exported="false" />
         <activity android:name=".Professor_AttendanceRateActivity" android:exported="false" />
         <activity android:name=".Professor_AdminContactActivity" android:exported="false" />
         <activity android:name=".Professor_DataManagementActivity" android:exported="false" />
         <activity android:name=".Professor_DailyAttendanceActivity" android:exported="false" />
-        <activity android:name=".Professor_AttendanceManagementActivity" android:exported="false" />-->
+        <activity android:name=".Professor_AttendanceManagementActivity" android:exported="false" />
 
     </application>
 
