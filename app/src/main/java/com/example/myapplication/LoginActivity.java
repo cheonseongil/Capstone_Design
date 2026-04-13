@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editId = findViewById(R.id.editId);
         editPw = findViewById(R.id.editPw);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnSignupFinal);
 
         btnLogin.setOnClickListener(v -> {
             String id = editId.getText().toString();

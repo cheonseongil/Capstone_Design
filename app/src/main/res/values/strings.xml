@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string-array name="days_array">
+        <item>월요일</item> <item>화요일</item> <item>수요일</item> <item>목요일</item> <item>금요일</item>
+    </string-array>
+    <string-array name="time_array">
+        <item>09</item> <item>10</item> <item>11</item> <item>12</item> <item>13</item>
+        <item>14</item> <item>15</item> <item>16</item> <item>17</item> <item>18</item>
+    </string-array>
 </resources>

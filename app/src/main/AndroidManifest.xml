@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -26,12 +28,17 @@
         <activity android:name=".FindIdActivity" android:exported="false" />
         <activity android:name=".FindPasswordActivity" android:exported="false" />
 
+        <activity android:name=".SignupActivity" android:exported="false" />
+
+        <activity android:name=".StudentSignupActivity" android:exported="false" />
 
         <activity android:name=".Student_MainActivity" android:exported="false"/>
         <activity android:name=".Student_ChangePasswordActivity" android:exported="false" />
         <activity android:name=".Student_PersonalInfoActivity" android:exported="false" />
         <activity android:name=".Student_SettingsActivity" android:exported="false" />
         <activity android:name=".Student_AttendanceRateActivity" android:exported="false" />
+        <activity android:name=".StudentDailyRateActivity" android:exported="false" />
+        <activity android:name=".NetworkAttendanceRateActivity" android:exported="false" />
 
 
         <activity android:name=".Professor_MainActivity" android:exported="false" />
@@ -44,6 +51,7 @@
         <activity android:name=".Professor_DataManagementActivity" android:exported="false" />
         <activity android:name=".Professor_DailyAttendanceActivity" android:exported="false" />
         <activity android:name=".Professor_AttendanceManagementActivity" android:exported="false" />
+        <activity android:name=".TimetableActivity" android:exported="false" />
 
     </application>
 

@@ -54,11 +54,24 @@
         android:padding="0dp" />
 
     <Button
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnStudentSignUp"
         android:layout_width="180dp"
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
-        android:text="회원가입"
+        android:text="학생 회원가입"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_outline_button"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="0dp" />
+
+    <Button
+        android:id="@+id/btnProfessorSignUp"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:text="교수 회원가입"
         android:textSize="18sp"
         android:textColor="#000000"
         android:background="@drawable/rounded_outline_button"

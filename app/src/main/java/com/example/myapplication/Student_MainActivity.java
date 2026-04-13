@@ -68,7 +68,30 @@ public class Student_MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // 2. 설정(톱니바퀴) 아이콘 이벤트 (기존 코드 유지)
+        // ==========================================
+        // 2. 일일 출석 버튼 이벤트 (추가된 부분)
+        // ==========================================
+        // XML에서 일일 출석 레이아웃의 ID가 btn_daily_attendance라고 가정합니다.
+        LinearLayout btnDailyAttendance = findViewById(R.id.btn_daily_attendance);
+
+        btnDailyAttendance.setOnClickListener(v -> {
+            // 이전에 만든 StudentDailyRateActivity로 이동
+            Intent intent = new Intent(Student_MainActivity.this, StudentDailyRateActivity.class);
+            startActivity(intent);
+        });
+
+        // ==========================================
+        // 3. 수강 과목 버튼 이벤트 (추가된 부분)
+        // ==========================================
+        LinearLayout btnCourseTaken = findViewById(R.id.btn_course_taken);
+        btnCourseTaken.setOnClickListener(v -> {
+            // 방금 같이 만든 시간표 화면(TimetableActivity)으로 이동
+            Intent intent = new Intent(Student_MainActivity.this, TimetableActivity.class);
+            startActivity(intent);
+        });
+
+
+        // 4. 설정(톱니바퀴) 아이콘 이벤트 (기존 코드 유지)
         ImageView imageViewSettings = findViewById(R.id.iv_settings);
         imageViewSettings.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,5 +1,6 @@
 package com.example.myapplication; // 본인의 패키지명에 맞게 확인하세요.
 
+import android.widget.TextView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -72,5 +73,25 @@ public class Professor_SettingsActivity extends AppCompatActivity {
             }
         });
 
+
+        // ==========================================
+        // 5. 로그아웃 버튼 (추가된 부분)
+        // ==========================================
+        // XML에서 TextView로 변경했으므로 TextView로 캐스팅합니다.
+        TextView btnLogout = findViewById(R.id.btn_logout);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // activity_main과 연결된 LoginMainActivity로 이동합니다.
+                Intent intent = new Intent(Professor_SettingsActivity.this, LoginMainActivity.class);
+
+                // 중요: 로그인 화면으로 돌아갈 때 기존의 쌓여있던 모든 화면(Activity) 기록을 삭제합니다.
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                startActivity(intent);
+                finish(); // 현재 액티비티도 안전하게 종료
+            }
+        });
     }
 }
