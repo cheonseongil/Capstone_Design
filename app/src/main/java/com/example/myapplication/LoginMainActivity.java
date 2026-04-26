@@ -41,14 +41,14 @@ public class LoginMainActivity extends AppCompatActivity {
 
         // 3. 학생 회원가입 버튼 클릭 이벤트
         btnStudentSignUp.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginMainActivity.this, StudentSignupActivity.class);
+            Intent intent = new Intent(LoginMainActivity.this, Student_Signup.class);
             startActivity(intent);
         });
 
         // 4. 교수 회원가입 버튼 클릭 이벤트
         // (이전에 만드셨던 SignupActivity가 교수용 회원가입 화면이므로 그쪽으로 연결했습니다)
         btnProfessorSignUp.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginMainActivity.this, SignupActivity.class);
+            Intent intent = new Intent(LoginMainActivity.this, Professor_SignupActivity.class);
             startActivity(intent);
         });
     }

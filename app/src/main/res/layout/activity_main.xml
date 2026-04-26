@@ -26,7 +26,7 @@
         android:src="@drawable/semyung_logo"
         android:contentDescription="학교 로고" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStudentLogin"
         android:layout_width="180dp"
         android:layout_height="56dp"
@@ -34,47 +34,47 @@
         android:text="학생 로그인"
         android:textSize="18sp"
         android:textStyle="normal"
-        android:textColor="#000000"
-        android:background="@drawable/rounded_outline_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_blue_filled_button"
         android:gravity="center"
         android:textAlignment="center"
         android:padding="0dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnProfessorLogin"
         android:layout_width="180dp"
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:text="교수 로그인"
         android:textSize="18sp"
-        android:textColor="#000000"
-        android:background="@drawable/rounded_outline_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_blue_filled_button"
         android:gravity="center"
         android:textAlignment="center"
         android:padding="0dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStudentSignUp"
         android:layout_width="180dp"
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:text="학생 회원가입"
         android:textSize="18sp"
-        android:textColor="#000000"
-        android:background="@drawable/rounded_outline_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_blue_filled_button"
         android:gravity="center"
         android:textAlignment="center"
         android:padding="0dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnProfessorSignUp"
         android:layout_width="180dp"
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:text="교수 회원가입"
         android:textSize="18sp"
-        android:textColor="#000000"
-        android:background="@drawable/rounded_outline_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_blue_filled_button"
         android:gravity="center"
         android:textAlignment="center"
         android:padding="0dp" />

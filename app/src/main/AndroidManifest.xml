@@ -28,7 +28,7 @@
         <activity android:name=".FindIdActivity" android:exported="false" />
         <activity android:name=".FindPasswordActivity" android:exported="false" />
 
-        <activity android:name=".SignupActivity" android:exported="false" />
+        <activity android:name=".Professor_SignupActivity" android:exported="false" />
 
         <activity android:name=".StudentSignupActivity" android:exported="false" />
 
@@ -39,6 +39,9 @@
         <activity android:name=".Student_AttendanceRateActivity" android:exported="false" />
         <activity android:name=".StudentDailyRateActivity" android:exported="false" />
         <activity android:name=".NetworkAttendanceRateActivity" android:exported="false" />
+        <activity
+            android:name=".Student_Signup"
+            android:exported="false" />
 
 
         <activity android:name=".Professor_MainActivity" android:exported="false" />
