@@ -3,10 +3,12 @@
     android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:padding="24dp">
+    android:paddingHorizontal="24dp"
+    android:paddingTop="24dp">
 
     <ImageView
         android:id="@+id/iv_back"
@@ -31,16 +33,14 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/daily_attendance" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="일일 출석"
-            android:textColor="#000000"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:src="@drawable/daily_attendance" /> <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="일일 출석"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
@@ -72,7 +72,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_attendance_card"
+                android:background="@drawable/bg_faq_card"
                 android:padding="16dp">
 
                 <TextView
@@ -92,11 +92,12 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_class_icon"
+                    app:layout_constraintEnd_toStartOf="@id/layout_activation"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -104,16 +105,66 @@
                         android:layout_height="wrap_content"
                         android:text="1.캡스톤 디자인(4학년)"
                         android:textColor="#000000"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="첨단정보학관 406호 2026-03-05 09:30"
+                        android:text="첨단정보학관 406호\n2026-03-05 09:30"
                         android:textColor="#333333"
-                        android:textSize="12sp" />
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_activation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="강의 활성화"
+                        android:textSize="10sp"
+                        android:textColor="#333333"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_pill_border">
+
+                        <TextView
+                            android:id="@+id/btn_class_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✓ 강의 시작"
+                            android:textSize="10sp"
+                            android:textColor="#000000"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="6dp"
+                            android:background="@drawable/bg_pill_left_filled" />
+
+                        <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#D3D3D3"/>
+
+                        <TextView
+                            android:id="@+id/btn_class_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="강의 종료"
+                            android:textSize="10sp"
+                            android:textColor="#000000"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="6dp" />
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -121,16 +172,92 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/bg_attendance_card"
+                android:background="@drawable/bg_faq_card"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_count_present"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="출석: 0"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tv_count_late"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="지각: 0"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tv_count_yugo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="유고: 0"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tv_count_absent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="결석: 0"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_faq_card"
                 android:padding="16dp">
 
-                <ImageView
-                    android:id="@+id/iv_profile_1"
+                <FrameLayout
+                    android:id="@+id/fl_profile_container_1"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_profile_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/user" />
+
+                    <ImageView
+                        android:id="@+id/iv_status_icon_1"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible"
+                        tools:src="@drawable/ic_status_present"
+                        tools:visibility="visible"/>
+                </FrameLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -139,9 +266,9 @@
                     android:text="홍길동"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="@id/iv_profile_1"
-                    app:layout_constraintStart_toStartOf="@id/iv_profile_1"
-                    app:layout_constraintTop_toBottomOf="@id/iv_profile_1" />
+                    app:layout_constraintEnd_toEndOf="@id/fl_profile_container_1"
+                    app:layout_constraintStart_toStartOf="@id/fl_profile_container_1"
+                    app:layout_constraintTop_toBottomOf="@id/fl_profile_container_1" />
 
                 <TextView
                     android:id="@+id/tv_info_1"
@@ -151,9 +278,9 @@
                     android:layout_marginTop="4dp"
                     android:text="2024XXXXXX  2026.03.05 09:29:26"
                     android:textColor="#333333"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_profile_1"
+                    app:layout_constraintStart_toEndOf="@id/fl_profile_container_1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -163,7 +290,7 @@
                     android:layout_marginStart="4dp"
                     android:text="출석"
                     android:textColor="#4CAF50"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/tv_info_1"
                     app:layout_constraintStart_toEndOf="@id/tv_info_1"
@@ -178,48 +305,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_info_1">
 
-                    <TextView
-                        android:id="@+id/btn_present_1"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_btn_present"
-                        android:gravity="center"
-                        android:text="출석"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_late_1"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_late"
-                        android:gravity="center"
-                        android:text="지각"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_yugo_1"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_yugo"
-                        android:gravity="center"
-                        android:text="유고"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_absent_1"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_absent"
-                        android:gravity="center"
-                        android:text="결석"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_present_1" android:layout_width="60dp" android:layout_height="36dp" android:background="@drawable/bg_btn_present" android:gravity="center" android:text="출석" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_late_1" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_late" android:gravity="center" android:text="지각" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_yugo_1" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_yugo" android:gravity="center" android:text="유고" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_absent_1" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_absent" android:gravity="center" android:text="결석" android:textColor="#FFFFFF" android:textSize="14sp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -227,39 +316,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/bg_attendance_card"
+                android:background="@drawable/bg_faq_card"
                 android:padding="16dp">
 
-                <ImageView
-                    android:id="@+id/iv_profile_3"
+                <FrameLayout
+                    android:id="@+id/fl_profile_container_2"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_profile_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/user" />
+
+                    <ImageView
+                        android:id="@+id/iv_status_icon_2"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible"
+                        tools:src="@drawable/ic_status_late"
+                        tools:visibility="visible"/>
+                </FrameLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="홍길동"
+                    android:text="김길동"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="@id/iv_profile_3"
-                    app:layout_constraintStart_toStartOf="@id/iv_profile_3"
-                    app:layout_constraintTop_toBottomOf="@id/iv_profile_3" />
+                    app:layout_constraintEnd_toEndOf="@id/fl_profile_container_2"
+                    app:layout_constraintStart_toStartOf="@id/fl_profile_container_2"
+                    app:layout_constraintTop_toBottomOf="@id/fl_profile_container_2" />
 
                 <TextView
-                    android:id="@+id/tv_info_3"
+                    android:id="@+id/tv_info_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
                     android:text="2024XXXXXX  2026.03.05 09:35:26"
                     android:textColor="#333333"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_profile_3"
+                    app:layout_constraintStart_toEndOf="@id/fl_profile_container_2"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -269,7 +373,90 @@
                     android:layout_marginStart="4dp"
                     android:text="지각"
                     android:textColor="#FF7043"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_info_2"
+                    app:layout_constraintStart_toEndOf="@id/tv_info_2"
+                    app:layout_constraintTop_toTopOf="@id/tv_info_2" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_info_2">
+
+                    <TextView android:id="@+id/btn_present_2" android:layout_width="60dp" android:layout_height="36dp" android:background="@drawable/bg_btn_present" android:gravity="center" android:text="출석" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_late_2" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_late" android:gravity="center" android:text="지각" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_yugo_2" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_yugo" android:gravity="center" android:text="유고" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_absent_2" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_absent" android:gravity="center" android:text="결석" android:textColor="#FFFFFF" android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_faq_card"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:id="@+id/fl_profile_container_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_profile_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/user" />
+
+                    <ImageView
+                        android:id="@+id/iv_status_icon_3"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible"
+                        tools:src="@drawable/ic_status_absent"
+                        tools:visibility="visible"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="이길동"
+                    android:textColor="#000000"
                     android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/fl_profile_container_3"
+                    app:layout_constraintStart_toStartOf="@id/fl_profile_container_3"
+                    app:layout_constraintTop_toBottomOf="@id/fl_profile_container_3" />
+
+                <TextView
+                    android:id="@+id/tv_info_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="2024XXXXXX  2026.03.05 10:29:26"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/fl_profile_container_3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_status_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="결석"
+                    android:textColor="#D32F2F"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/tv_info_3"
                     app:layout_constraintStart_toEndOf="@id/tv_info_3"
@@ -284,154 +471,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_info_3">
 
-                    <TextView
-                        android:id="@+id/btn_present_2"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_btn_present"
-                        android:gravity="center"
-                        android:text="출석"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_late_2"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_late"
-                        android:gravity="center"
-                        android:text="지각"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_yugo_2"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_yugo"
-                        android:gravity="center"
-                        android:text="유고"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_absent_2"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_absent"
-                        android:gravity="center"
-                        android:text="결석"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_attendance_card"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/iv_profile_4"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/user"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="홍길동"
-                    android:textColor="#000000"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="@id/iv_profile_4"
-                    app:layout_constraintStart_toStartOf="@id/iv_profile_4"
-                    app:layout_constraintTop_toBottomOf="@id/iv_profile_4" />
-
-                <TextView
-                    android:id="@+id/tv_info_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="2024XXXXXX  2026.03.05 10:29:26"
-                    android:textColor="#333333"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_profile_4"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_status_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="결석"
-                    android:textColor="#D32F2F"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_info_4"
-                    app:layout_constraintStart_toEndOf="@id/tv_info_4"
-                    app:layout_constraintTop_toTopOf="@id/tv_info_4" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_info_4">
-
-                    <TextView
-                        android:id="@+id/btn_present_3"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_btn_present"
-                        android:gravity="center"
-                        android:text="출석"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_late_3"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_late"
-                        android:gravity="center"
-                        android:text="지각"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_yugo_3"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_yugo"
-                        android:gravity="center"
-                        android:text="유고"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/btn_absent_3"
-                        android:layout_width="60dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/bg_btn_absent"
-                        android:gravity="center"
-                        android:text="결석"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_present_3" android:layout_width="60dp" android:layout_height="36dp" android:background="@drawable/bg_btn_present" android:gravity="center" android:text="출석" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_late_3" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_late" android:gravity="center" android:text="지각" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_yugo_3" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_yugo" android:gravity="center" android:text="유고" android:textColor="#FFFFFF" android:textSize="14sp" />
+                    <TextView android:id="@+id/btn_absent_3" android:layout_width="60dp" android:layout_height="36dp" android:layout_marginStart="8dp" android:background="@drawable/bg_btn_absent" android:gravity="center" android:text="결석" android:textColor="#FFFFFF" android:textSize="14sp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

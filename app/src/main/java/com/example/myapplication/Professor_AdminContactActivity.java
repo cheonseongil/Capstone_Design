@@ -35,5 +35,39 @@ public class Professor_AdminContactActivity extends AppCompatActivity {
         });
 
         // 나머지 버튼들도 동일한 방식으로 클릭 리스너를 설정할 수 있습니다.
+
+
+        // ==========================================
+        // 3. ★ 추가된 부분: 1:1 문의 버튼 클릭 이벤트
+        // ==========================================
+        findViewById(R.id.btn_one_on_one).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Professor_OneOnOneActivity 화면으로 이동
+                Intent intent = new Intent(Professor_AdminContactActivity.this, Professor_OneOnOneActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 나의 문의내역 버튼 클릭 이벤트
+        findViewById(R.id.btn_my_inquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 나의 문의내역 화면으로 이동
+                Intent intent = new Intent(Professor_AdminContactActivity.this, Professor_MyInquiryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 4. ★ 추가된 부분: 자주 묻는 질문 버튼 클릭 이벤트
+
+        findViewById(R.id.btn_faq).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 현재 화면에서 방금 만든 FaqActivity 화면으로 이동합니다.
+                Intent intent = new Intent(Professor_AdminContactActivity.this, Professor_FaqActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.widget.ImageView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Professor_AttendanceManagementActivity extends AppCompatActivity {
 
@@ -37,5 +39,33 @@ public class Professor_AttendanceManagementActivity extends AppCompatActivity {
                 finish(); // 현재 출석 관리 화면을 종료하고 이전 화면으로 돌아갑니다.
             });
         }
+
+        // ==========================================
+        // ★ 추가된 부분: 각 과목 클릭 시 학생 목록 화면으로 이동
+        // ==========================================
+        ConstraintLayout clCourse1 = findViewById(R.id.cl_course_1);
+        if (clCourse1 != null) {
+            clCourse1.setOnClickListener(v -> {
+                Intent intent = new Intent(Professor_AttendanceManagementActivity.this, Professor_StudentListActivity.class);
+                startActivity(intent);
+            });
+        }
+
+        ConstraintLayout clCourse2 = findViewById(R.id.cl_course_2);
+        if (clCourse2 != null) {
+            clCourse2.setOnClickListener(v -> {
+                Intent intent = new Intent(Professor_AttendanceManagementActivity.this, Professor_StudentListActivity.class);
+                startActivity(intent);
+            });
+        }
+
+        ConstraintLayout clCourse3 = findViewById(R.id.cl_course_3);
+        if (clCourse3 != null) {
+            clCourse3.setOnClickListener(v -> {
+                Intent intent = new Intent(Professor_AttendanceManagementActivity.this, Professor_StudentListActivity.class);
+                startActivity(intent);
+            });
+        }
+
     }
 }

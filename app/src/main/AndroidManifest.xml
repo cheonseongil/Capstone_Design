@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
 
     <application
         android:allowBackup="true"
@@ -38,6 +43,7 @@
         <activity android:name=".Student_SettingsActivity" android:exported="false" />
         <activity android:name=".Student_AttendanceRateActivity" android:exported="false" />
         <activity android:name=".StudentDailyRateActivity" android:exported="false" />
+        <activity android:name=".Student_CourseGraphActivity" />
         <activity android:name=".NetworkAttendanceRateActivity" android:exported="false" />
         <activity
             android:name=".Student_Signup"
@@ -54,6 +60,11 @@
         <activity android:name=".Professor_DataManagementActivity" android:exported="false" />
         <activity android:name=".Professor_DailyAttendanceActivity" android:exported="false" />
         <activity android:name=".Professor_AttendanceManagementActivity" android:exported="false" />
+        <activity android:name=".Professor_FaqActivity" />
+        <activity android:name=".Professor_OneOnOneActivity" />
+        <activity android:name=".Professor_MyInquiryActivity" />
+        <activity android:name=".Professor_StudentListActivity" />
+        <activity android:name=".Professor_StudentDetailActivity" />
         <activity android:name=".TimetableActivity" android:exported="false" />
 
     </application>

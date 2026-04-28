@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 // import android.widget.LinearLayout; // 만약 아래 버튼이 LinearLayout이라면 주석 해제
 
 import androidx.activity.EdgeToEdge;
@@ -75,7 +76,20 @@ public class Professor_SettingsActivity extends AppCompatActivity {
 
 
         // ==========================================
-        // 5. 로그아웃 버튼 (추가된 부분)
+        // ★ 5. 소프트웨어 업데이트 버튼 클릭 이벤트 (추가된 부분)
+        // ==========================================
+        ConstraintLayout btnUpdate = findViewById(R.id.btn_update);
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 화면 하단에 팝업 메시지를 띄웁니다.
+                Toast.makeText(Professor_SettingsActivity.this, "최신 버전입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        // ==========================================
+        // 6. 로그아웃 버튼 (추가된 부분)
         // ==========================================
         // XML에서 TextView로 변경했으므로 TextView로 캐스팅합니다.
         TextView btnLogout = findViewById(R.id.btn_logout);

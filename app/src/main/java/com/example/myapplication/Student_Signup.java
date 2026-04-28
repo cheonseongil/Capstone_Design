@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton; // ImageButton 임포트 추가
+import android.widget.ImageView; // ★ ImageButton에서 ImageView로 변경
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,7 @@ public class Student_Signup extends AppCompatActivity {
     // 1. 사용할 뷰 객체 선언
     EditText editId, editPw, editPwCheck;
     Button btnSignupFinal;
-    ImageButton btnBack; // ★ 뒤로 가기 버튼 선언
+    ImageView btnBack; // ★ ImageButton에서 ImageView로 변경
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class Student_Signup extends AppCompatActivity {
         editPwCheck = findViewById(R.id.editPwCheck);
         btnSignupFinal = findViewById(R.id.btnSignupFinal);
 
-        // ★ 뒤로 가기 버튼 찾기 연결 (XML의 id가 btnBack 맞습니다)
+        // ★ 뒤로 가기 버튼 찾기 연결
         btnBack = findViewById(R.id.btnBack);
 
         // ==========================================
@@ -38,7 +38,7 @@ public class Student_Signup extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 현재 회원가입 화면을 종료하여 자연스럽게 이전 메인 화면으로 돌아갑니다.
+                // 현재 회원가입 화면을 종료하여 자연스럽게 이전 화면으로 돌아갑니다.
                 finish();
             }
         });
@@ -57,10 +57,10 @@ public class Student_Signup extends AppCompatActivity {
                 } else if (!pw.equals(pwCheck)) {
                     Toast.makeText(Student_Signup.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                 } else {
-                    // ★ 메시지를 학생에 맞게 수정했습니다.
+                    // 메시지 출력
                     Toast.makeText(Student_Signup.this, id + "님, 학생 회원가입 성공!", Toast.LENGTH_SHORT).show();
 
-                    // 가입 완료 후 자동으로 로그인(메인) 화면으로 돌아가게 하려면 finish() 주석 해제
+                    // 가입 완료 후 자동으로 로그인(메인) 화면으로 돌아갑니다.
                     finish();
                 }
             }

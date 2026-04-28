@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 // import android.widget.LinearLayout; // 만약 아래 버튼이 LinearLayout이라면 주석 해제
 import android.widget.TextView; // TextView 임포트 추가
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,6 +63,18 @@ public class Student_SettingsActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
             startActivity(intent);
+        });
+
+        // ==========================================
+        // ★ 5. 소프트웨어 업데이트 버튼 클릭 이벤트 (추가된 부분)
+        // ==========================================
+        ConstraintLayout btnUpdate = findViewById(R.id.btn_update);
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 화면 하단에 팝업 메시지를 띄웁니다.
+                Toast.makeText(Student_SettingsActivity.this, "최신 버전입니다.", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

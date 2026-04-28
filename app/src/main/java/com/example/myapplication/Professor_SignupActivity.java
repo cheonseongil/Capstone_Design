@@ -1,9 +1,10 @@
-package com.example.myapplication;
+package com.example.myapplication; // 본인의 패키지명 확인!
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView; // ★ ImageView 임포트 추가
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +13,7 @@ public class Professor_SignupActivity extends AppCompatActivity {
     // 1. 사용할 뷰 객체 선언
     EditText editId, editPw, editPwCheck;
     Button btnSignup;
-    View btnBack; // ★ 뒤로 가기 버튼 변수 추가 (View로 선언하면 ImageButton, ImageView 등 모두 호환됩니다)
+    ImageView btnBack; // ★ View에서 ImageView로 명확하게 변경
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,11 @@ public class Professor_SignupActivity extends AppCompatActivity {
         editPwCheck = findViewById(R.id.editPwCheck);
         btnSignup = findViewById(R.id.btnSignupFinal);
 
-        // ★ 뒤로 가기 버튼 ID 연결 (XML에 id가 btnBack으로 되어 있어야 합니다)
+        // ★ 뒤로 가기 버튼 ID 연결
         btnBack = findViewById(R.id.btnBack);
 
         // ==========================================
-        // ★ 추가된 부분: 뒤로 가기 버튼 클릭 이벤트
+        // ★ 핵심: 뒤로 가기 버튼 클릭 이벤트
         // ==========================================
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
