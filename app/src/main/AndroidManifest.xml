@@ -65,6 +65,7 @@
         <activity android:name=".Professor_MyInquiryActivity" />
         <activity android:name=".Professor_StudentListActivity" />
         <activity android:name=".Professor_StudentDetailActivity" />
+        <activity android:name=".Professor_TimetableActivity" />
         <activity android:name=".TimetableActivity" android:exported="false" />
 
     </application>

@@ -59,5 +59,15 @@ public class Professor_MainActivity extends AppCompatActivity {
             Intent intent = new Intent(Professor_MainActivity.this, Professor_AttendanceRateActivity.class);
             startActivity(intent);
         });
+
+        // ==========================================
+        // ★ 4. 추가된 부분: 강의 과목(시간표) 버튼 이벤트
+        // ==========================================
+        LinearLayout btnTimetable = findViewById(R.id.btn_timetable);
+        btnTimetable.setOnClickListener(v -> {
+            // 방금 만든 시간표 화면으로 이동
+            Intent intent = new Intent(Professor_MainActivity.this, Professor_TimetableActivity.class);
+            startActivity(intent);
+        });
     }
 }
