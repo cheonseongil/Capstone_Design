@@ -46,13 +46,14 @@
                 android:layout_width="12dp"
                 android:layout_height="wrap_content" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnFindIdSendCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="인증번호 받기"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/rounded_button" />
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#0088FF" />
         </LinearLayout>
 
         <EditText
@@ -64,23 +65,25 @@
             android:inputType="number"
             android:padding="12dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnFindIdCheck"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="확인"
             android:textColor="#FFFFFF"
-            android:background="@drawable/rounded_button" />
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#0088FF" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnFindId"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:text="아이디 찾기"
             android:textColor="#FFFFFF"
-            android:background="@drawable/rounded_button" />
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#0088FF" />
 
     </LinearLayout>
 </ScrollView>
