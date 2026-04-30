@@ -46,14 +46,24 @@ public class Professor_DailyAttendanceActivity extends AppCompatActivity {
         }
 
         // =====================================================================
-        // ★ 추가된 부분: 이전 화면에서 보낸 "교시 숫자"를 받아서 동그라미 아이콘을 변경합니다.
+        // ★ 교시 숫자와 시간 텍스트 동시 변경 처리
         // =====================================================================
         TextView tvClassIcon = findViewById(R.id.tv_class_icon);
+        TextView tvClassTime = findViewById(R.id.tv_class_time); // XML에 새로 추가한 텍스트뷰 연결
         String passedClassNum = getIntent().getStringExtra("CLASS_NUM");
 
-        // 전달받은 데이터가 있으면(null이 아니면) 글자를 바꿉니다.
         if (passedClassNum != null) {
+            // 동그라미 안 숫자(1, 2, 3) 변경
             tvClassIcon.setText(passedClassNum);
+
+            // 숫자에 맞게 강의 시간 텍스트도 변경
+            if (passedClassNum.equals("1")) {
+                tvClassTime.setText("첨단정보학관 406호\n2026-03-05 09:30");
+            } else if (passedClassNum.equals("2")) {
+                tvClassTime.setText("첨단정보학관 406호\n2026-03-05 10:30");
+            } else if (passedClassNum.equals("3")) {
+                tvClassTime.setText("첨단정보학관 406호\n2026-03-05 11:30");
+            }
         }
         // =====================================================================
 
@@ -160,11 +170,26 @@ public class Professor_DailyAttendanceActivity extends AppCompatActivity {
     private void updateAttendanceState(TextView statusText, ImageView statusIconView, TextView selectedBtn,
                                        TextView un1, TextView un2, TextView un3,
                                        String text, String colorHex, int iconRes) {
+
         statusText.setText(text);
         statusText.setTextColor(Color.parseColor(colorHex));
 
         statusIconView.setImageResource(iconRes);
         statusIconView.setVisibility(View.VISIBLE);
+
+        if (statusIconView.getTag() != null) {
+            statusIconView.removeCallbacks((Runnable) statusIconView.getTag());
+        }
+
+        Runnable hideIconAction = new Runnable() {
+            @Override
+            public void run() {
+                statusIconView.setVisibility(View.INVISIBLE);
+            }
+        };
+
+        statusIconView.setTag(hideIconAction);
+        statusIconView.postDelayed(hideIconAction, 3000);
 
         selectedBtn.setAlpha(1.0f);
         un1.setAlpha(0.3f);

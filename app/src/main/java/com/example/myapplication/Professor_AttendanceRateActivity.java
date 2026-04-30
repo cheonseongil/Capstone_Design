@@ -51,7 +51,7 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
         String bgColor = "#E8E2FF";
         String textColor = "#5C4599";
 
-        // ★ 수정됨: 맨 마지막에 "1", "2", "3" 이라는 교시 데이터를 추가로 넘겨줍니다.
+        // 1, 2, 3 이라는 교시 데이터를 추가로 넘겨줍니다.
         addCourseBlock(courseName, 9, 30, 10, 20, bgColor, textColor, "1");
         addCourseBlock(courseName, 10, 30, 11, 20, bgColor, textColor, "2");
         addCourseBlock(courseName, 11, 30, 12, 20, bgColor, textColor, "3");
@@ -63,6 +63,9 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
         LinearLayout timeColumn = findViewById(R.id.ll_time_column);
         LinearLayout gridLines = findViewById(R.id.ll_grid_lines);
 
+        // ★ 부모가 자식 뷰(시간 텍스트)를 자르지 않도록 한 번 더 설정
+        timeColumn.setClipChildren(false);
+
         for (int i = START_HOUR; i <= END_HOUR; i++) {
             TextView tvTime = new TextView(this);
             String amPm = (i < 12) ? "오전" : "오후";
@@ -73,7 +76,12 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
             tvTime.setTextColor(Color.parseColor("#666666"));
             tvTime.setTextSize(10f);
             tvTime.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
-            tvTime.setPadding(0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, -6, getResources().getDisplayMetrics()), 0, 0);
+
+            // ★ 수정됨: 텍스트 잘림의 원인이었던 음수 패딩 제거 (모두 0으로 설정)
+            tvTime.setPadding(0, 0, 0, 0);
+
+            // ★ 수정됨: 텍스트를 위로 살짝 올려서 선과 중앙을 맞춤 (안 잘림)
+            tvTime.setTranslationY(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, -8, getResources().getDisplayMetrics()));
 
             LinearLayout.LayoutParams timeParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, hourHeightPx);
             tvTime.setLayoutParams(timeParams);
@@ -91,7 +99,6 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
         }
     }
 
-    // ★ 수정됨: 매개변수 맨 끝에 String classNum 추가
     private void addCourseBlock(String title, int startH, int startM, int endH, int endM, String bgColorHex, String textColorHex, String classNum) {
         RelativeLayout eventArea = findViewById(R.id.rl_event_area);
 
@@ -118,7 +125,7 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Professor_AttendanceRateActivity.this, Professor_DailyAttendanceActivity.class);
-                // ★ 핵심: 다음 화면으로 넘어갈 때 "CLASS_NUM"이라는 이름표를 붙여서 숫자를 택배로 보냅니다!
+                // 다음 화면으로 넘어갈 때 "CLASS_NUM" 이름표로 교시 숫자를 보냅니다
                 intent.putExtra("CLASS_NUM", classNum);
                 startActivity(intent);
             }

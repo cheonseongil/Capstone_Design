@@ -55,26 +55,29 @@
         android:background="#E0E0E0"
         app:layout_constraintTop_toBottomOf="@id/btn_back" />
 
-    <!-- 시간표 스크롤 영역 (오전 9시 ~ 오후 9시) -->
+    <!-- ★ 수정됨: clipChildren="false" 추가 (텍스트가 위로 올라가도 안 잘림) -->
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollbars="none"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/v_header_line"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- RelativeLayout으로 겹치기 구조 생성 -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipChildren="false"
             android:paddingBottom="50dp">
 
-            <!-- 1. 좌측 시간 텍스트 영역 -->
+            <!-- 1. 좌측 시간 텍스트 영역 (clipChildren 추가) -->
             <LinearLayout
                 android:id="@+id/ll_time_column"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:clipChildren="false"
                 android:orientation="vertical" />
 
             <!-- 2. 우측 그리드 및 과목 블록 영역 -->
@@ -114,7 +117,7 @@
                     android:textStyle="bold"
                     android:gravity="center" />
 
-                <!-- 빨간 점 (이전에 만드신 bg_circle_red.xml 사용) -->
+                <!-- 빨간 점 -->
                 <View
                     android:layout_width="6dp"
                     android:layout_height="6dp"
