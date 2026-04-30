@@ -103,7 +103,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1.캡스톤 디자인(4학년)"
+                        android:text="캡스톤 디자인(4학년)"
                         android:textColor="#000000"
                         android:textSize="14sp"
                         android:textStyle="bold" />

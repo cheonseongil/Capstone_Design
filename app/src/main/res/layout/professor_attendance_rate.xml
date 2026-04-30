@@ -1,212 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main" android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    android:paddingHorizontal="32dp">
+    android:fitsSystemWindows="true">
 
+    <!-- 황금 규격: 뒤로 가기 버튼 -->
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/go_back"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp" />
+
+    <!-- 황금 규격: 제목 중앙 정렬 -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/ll_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="48dp"
-        android:paddingBottom="48dp">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_back"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/daily_attendance" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp">
-
-            <ImageView
-                android:id="@+id/btn_back"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/go_back"
-                android:padding="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/daily_attendance" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="일일 출석"
-                    android:textColor="#000000"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_course_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/bg_attendance_card"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/icon_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_circle_icon"
-                android:gravity="center"
-                android:text="C"
-                android:textColor="#5C4599"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_percent_1"
-                app:layout_constraintStart_toEndOf="@id/icon_1"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="캡스톤 디자인"
-                    android:textColor="#333333"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="첨단정보학관 406호 2026-03-05 09:30"
-                    android:textColor="#666666"
-                    android:textSize="12sp" />
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_course_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/bg_attendance_card"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/icon_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_circle_icon"
-                android:gravity="center"
-                android:text="C"
-                android:textColor="#5C4599"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_percent_2"
-                app:layout_constraintStart_toEndOf="@id/icon_2"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="캡스톤 디자인"
-                    android:textColor="#333333"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="첨단정보학관 406호 2026-03-05 10:30"
-                    android:textColor="#666666"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_course_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/bg_attendance_card"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/icon_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_circle_icon"
-                android:gravity="center"
-                android:text="C"
-                android:textColor="#5C4599"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_percent_3"
-                app:layout_constraintStart_toEndOf="@id/icon_3"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="캡스톤 디자인"
-                    android:textColor="#333333"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="첨단정보학관 406호 2026-03-05 11:30"
-                    android:textColor="#666666"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+            android:layout_marginStart="8dp"
+            android:text="일일 출석"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
-</ScrollView>
+
+    <View
+        android:id="@+id/v_header_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#E0E0E0"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+    <!-- 시간표 스크롤 영역 (오전 9시 ~ 오후 9시) -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/v_header_line"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- RelativeLayout으로 겹치기 구조 생성 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="50dp">
+
+            <!-- 1. 좌측 시간 텍스트 영역 -->
+            <LinearLayout
+                android:id="@+id/ll_time_column"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- 2. 우측 그리드 및 과목 블록 영역 -->
+            <RelativeLayout
+                android:id="@+id/rl_event_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ll_time_column">
+
+                <!-- 가로줄(그리드)이 들어갈 곳 -->
+                <LinearLayout
+                    android:id="@+id/ll_grid_lines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <!-- 이 안에 Java 코드로 과목 블록이 추가됩니다 -->
+            </RelativeLayout>
+
+            <!-- 3. 현재 시간 표시 빨간색 실선 (최상단 겹침) -->
+            <LinearLayout
+                android:id="@+id/layout_current_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="invisible">
+
+                <!-- 실시간 텍스트 -->
+                <TextView
+                    android:id="@+id/tv_current_time"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="12:31"
+                    android:textColor="#D32F2F"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <!-- 빨간 점 (이전에 만드신 bg_circle_red.xml 사용) -->
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_circle_red" />
+
+                <!-- 빨간 가로 실선 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#D32F2F" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
