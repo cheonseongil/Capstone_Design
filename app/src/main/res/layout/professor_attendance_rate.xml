@@ -7,7 +7,6 @@
     android:background="#FAFAFA"
     android:fitsSystemWindows="true">
 
-    <!-- 황금 규격: 뒤로 가기 버튼 -->
     <ImageView
         android:id="@+id/btn_back"
         android:layout_width="48dp"
@@ -20,7 +19,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginStart="20dp" />
 
-    <!-- 황금 규격: 제목 중앙 정렬 -->
     <LinearLayout
         android:id="@+id/ll_title"
         android:layout_width="wrap_content"

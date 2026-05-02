@@ -77,10 +77,8 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
             tvTime.setTextSize(10f);
             tvTime.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
 
-            // ★ 수정됨: 텍스트 잘림의 원인이었던 음수 패딩 제거 (모두 0으로 설정)
             tvTime.setPadding(0, 0, 0, 0);
 
-            // ★ 수정됨: 텍스트를 위로 살짝 올려서 선과 중앙을 맞춤 (안 잘림)
             tvTime.setTranslationY(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, -8, getResources().getDisplayMetrics()));
 
             LinearLayout.LayoutParams timeParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, hourHeightPx);
@@ -125,7 +123,6 @@ public class Professor_AttendanceRateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Professor_AttendanceRateActivity.this, Professor_DailyAttendanceActivity.class);
-                // 다음 화면으로 넘어갈 때 "CLASS_NUM" 이름표로 교시 숫자를 보냅니다
                 intent.putExtra("CLASS_NUM", classNum);
                 startActivity(intent);
             }
