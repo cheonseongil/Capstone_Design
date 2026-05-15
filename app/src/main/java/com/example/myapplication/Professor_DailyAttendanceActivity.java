@@ -1,30 +1,27 @@
 package com.example.myapplication; // 본인 패키지명에 맞게 수정
 
-import android.Manifest;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class Professor_DailyAttendanceActivity extends AppCompatActivity {
 
     private TextView tvStatus1, tvStatus2, tvStatus3;
     private TextView tvCountPresent, tvCountLate, tvCountYugo, tvCountAbsent;
     private ImageView ivStatusIcon1, ivStatusIcon2, ivStatusIcon3;
-
-    private static final int BLUETOOTH_PERMISSION_REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,24 +43,35 @@ public class Professor_DailyAttendanceActivity extends AppCompatActivity {
         }
 
         // =====================================================================
-        // ★ 교시 숫자와 시간 텍스트 동시 변경 처리
+        // ★ 현재 날짜 동기화 & 교시별 시간 처리
         // =====================================================================
+        TextView tvDateExample = findViewById(R.id.tv_date_example);
         TextView tvClassIcon = findViewById(R.id.tv_class_icon);
-        TextView tvClassTime = findViewById(R.id.tv_class_time); // XML에 새로 추가한 텍스트뷰 연결
+        TextView tvClassTime = findViewById(R.id.tv_class_time);
+
+        Calendar calendar = Calendar.getInstance();
+        String dateSlash = new SimpleDateFormat("yyyy/MM/dd", Locale.KOREA).format(calendar.getTime());
+        String dateDash = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(calendar.getTime());
+
+        // ★ 수정됨: "예) "를 지우고 날짜만 출력합니다.
+        if (tvDateExample != null) {
+            tvDateExample.setText(dateSlash);
+        }
+
         String passedClassNum = getIntent().getStringExtra("CLASS_NUM");
 
         if (passedClassNum != null) {
-            // 동그라미 안 숫자(1, 2, 3) 변경
             tvClassIcon.setText(passedClassNum);
 
-            // 숫자에 맞게 강의 시간 텍스트도 변경
             if (passedClassNum.equals("1")) {
-                tvClassTime.setText("첨단정보학관 406호\n2026-03-05 09:30");
+                tvClassTime.setText("첨단정보학관 406호\n" + dateDash + " 09:30");
             } else if (passedClassNum.equals("2")) {
-                tvClassTime.setText("첨단정보학관 406호\n2026-03-05 10:30");
+                tvClassTime.setText("첨단정보학관 406호\n" + dateDash + " 10:30");
             } else if (passedClassNum.equals("3")) {
-                tvClassTime.setText("첨단정보학관 406호\n2026-03-05 11:30");
+                tvClassTime.setText("첨단정보학관 406호\n" + dateDash + " 11:30");
             }
+        } else {
+            tvClassTime.setText("첨단정보학관 406호\n" + dateDash + " 09:30");
         }
         // =====================================================================
 
@@ -79,53 +87,6 @@ public class Professor_DailyAttendanceActivity extends AppCompatActivity {
         ivStatusIcon1 = findViewById(R.id.iv_status_icon_1);
         ivStatusIcon2 = findViewById(R.id.iv_status_icon_2);
         ivStatusIcon3 = findViewById(R.id.iv_status_icon_3);
-
-        TextView btnClassStart = findViewById(R.id.btn_class_start);
-        TextView btnClassEnd = findViewById(R.id.btn_class_end);
-
-        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-        btnClassStart.setOnClickListener(v -> {
-            if (bluetoothAdapter == null) {
-                Toast.makeText(this, "이 기기는 블루투스를 지원하지 않습니다.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, BLUETOOTH_PERMISSION_REQUEST_CODE);
-                return;
-            }
-
-            if (!bluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivity(enableBtIntent);
-            }
-
-            btnClassStart.setText("✓ 강의 시작");
-            btnClassStart.setBackgroundResource(R.drawable.bg_pill_left_filled);
-            btnClassEnd.setText("강의 종료");
-            btnClassEnd.setBackground(null);
-        });
-
-        btnClassEnd.setOnClickListener(v -> {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, BLUETOOTH_PERMISSION_REQUEST_CODE);
-                return;
-            }
-
-            try {
-                if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
-                    Toast.makeText(this, "강의가 종료되었습니다. (블루투스 제어)", Toast.LENGTH_SHORT).show();
-                }
-            } catch (SecurityException e) {
-                Toast.makeText(this, "최신 안드로이드에서는 시스템 설정에서 직접 꺼야 합니다.", Toast.LENGTH_SHORT).show();
-            }
-
-            btnClassStart.setText("강의 시작");
-            btnClassStart.setBackground(null);
-            btnClassEnd.setText("✓ 강의 종료");
-            btnClassEnd.setBackgroundResource(R.drawable.bg_pill_right_filled);
-        });
 
         setupStudentButtons(tvStatus1, ivStatusIcon1,
                 findViewById(R.id.btn_present_1), findViewById(R.id.btn_late_1),

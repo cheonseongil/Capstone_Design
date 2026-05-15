@@ -45,12 +45,13 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- ★ 수정됨: 텍스트에서 "예) " 제거 -->
     <TextView
         android:id="@+id/tv_date_example"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="예) 2026/03/05"
+        android:text="2026/03/05"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -83,7 +84,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/bg_circle_purple"
                     android:gravity="center"
-                    android:text="C"
+                    android:text="1"
                     android:textColor="#3F51B5"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -99,7 +100,7 @@
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_class_icon"
-                    app:layout_constraintEnd_toStartOf="@id/layout_activation"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -110,7 +111,6 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <!-- ★ 추가됨: 자바에서 글씨를 바꿀 수 있도록 id 추가 -->
                     <TextView
                         android:id="@+id/tv_class_time"
                         android:layout_width="wrap_content"
@@ -119,56 +119,6 @@
                         android:text="첨단정보학관 406호\n2026-03-05 09:30"
                         android:textColor="#333333"
                         android:textSize="10sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_activation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="강의 활성화"
-                        android:textSize="10sp"
-                        android:textColor="#333333"
-                        android:textStyle="bold"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="4dp"
-                        android:background="@drawable/bg_pill_border">
-
-                        <TextView
-                            android:id="@+id/btn_class_start"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="✓ 강의 시작"
-                            android:textSize="10sp"
-                            android:textColor="#000000"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="6dp"
-                            android:background="@drawable/bg_pill_left_filled" />
-
-                        <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#D3D3D3"/>
-
-                        <TextView
-                            android:id="@+id/btn_class_end"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="강의 종료"
-                            android:textSize="10sp"
-                            android:textColor="#000000"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="6dp" />
-                    </LinearLayout>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -233,6 +183,7 @@
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- 학생 1 -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -316,6 +267,7 @@
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- 학생 2 -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -399,6 +351,7 @@
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- 학생 3 -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

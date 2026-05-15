@@ -120,7 +120,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="M"
+                            android:text="1"
                             android:textColor="#5E35B1"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
@@ -189,7 +189,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="C"
+                            android:text="2"
                             android:textColor="#5E35B1"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
@@ -258,7 +258,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="DB"
+                            android:text="3"
                             android:textColor="#5E35B1"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
@@ -327,7 +327,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="N"
+                            android:text="4"
                             android:textColor="#5E35B1"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
